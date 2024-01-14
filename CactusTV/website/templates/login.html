@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+        <title>Login</title>
+
+    </head>
+
+    <body class="main-background">
+
+        <div class="login-container">
+
+            <div class="inner-login-container">
+
+                <div class="login-image">
+
+                    <img class="logo-image" src="{{ url_for('static', filename='icons/cactus-4.png') }}">
+
+                </div>
+
+                <div class="login-username">
+
+                    <form action="{{ url_for('auth.login') }}" method="POST">
+
+                    <input class="text-bar" type="text" name="username" placeholder="Username" required>
+
+                </div>
+
+                <div class="login-password">
+
+                    <form action="{{ url_for('auth.login') }}" method="POST">
+
+                    <input class="text-bar" type="password" name="password" placeholder="Password" required>
+
+                </div>
+
+                <div class="login-button">
+
+                    <button class="login-button">Login</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

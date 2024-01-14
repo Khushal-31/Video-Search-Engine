@@ -1,0 +1,361 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+
+    Home Page
+
+{% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="main-container">
+        
+        <div class="recommendation-container">
+
+            <div class="inner-recommendation-container">
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[0]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[0]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[0]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[1]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[1]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[1]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[2]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[2]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[2]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[3]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[3]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[3]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[4]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[4]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[4]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[5]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[5]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[5]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[6]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[6]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[6]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[7]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[7]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[7]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[8]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[8]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[8]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[9]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[9]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[9]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[10]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[10]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[10]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[11]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[11]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[11]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[12]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[12]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[12]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[13]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[13]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[13]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+                <div class="snippet-container">
+
+                    {% if home_recommended_videos %}
+
+                    {% set id = home_recommended_videos[14]['videoInfo']['id'] %}
+        
+                    <a href="{{ url_for('views.video_page',id=id)}}">
+        
+                        <div class="snippet-content">
+        
+                        <img class="thumbnail" src="{{ home_recommended_videos[14]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+        
+                        <p class="title"> {{ home_recommended_videos[14]['videoInfo']['snippet']['title'] }} </p>
+        
+                        </div>
+        
+                    </a>
+        
+                    {% endif %}
+        
+                </div>
+
+            </div>
+
+        </div>
+
+        <br><br><br><br>
+
+    </div>
+
+{% endblock %}

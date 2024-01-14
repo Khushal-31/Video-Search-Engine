@@ -1,0 +1,50 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+
+    Search Page
+
+{% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+
+    <script src="{{ url_for('static', filename='js/query.js') }}"></script>
+
+    <script> var search_results_intermediate_th = '{{ search_results_th | tojson | safe}}';var search_results_intermediate_ti = '{{ search_results_ti | tojson | safe}}';var search_results_intermediate_ct = '{{ search_results_ct | tojson | safe}}';var search_results_intermediate_p = '{{ search_results_p | tojson | safe}}'; var search_results_intermediate_vc = '{{ search_results_vc | tojson | safe}}';  var search_results_intermediate_s = '{{ search_results_s | tojson | safe }}'; var search_results_intermediate_i = '{{ search_results_i | tojson | safe }}'; </script>
+
+{% endblock %}
+
+{% block load %}
+
+    <body onload="query()" class="main-background">
+
+{% endblock %}
+
+{% block search_bar %}
+
+    {% set query = query1[0] %}
+
+        <div class="search-bar">
+
+                <div class="search-div">
+
+                    <form action="{{ url_for('views.search_page',query=query) }}" method="POST">
+
+                        <input type="text" class="search-bar-box" name="query" placeholder="Type to search...">
+
+                </div>
+
+                <div class="button-div">
+
+                    <button class="search-button">Search</button>
+
+                    </form>
+
+                </div>
+
+        </div>
+
+{% endblock %}
+

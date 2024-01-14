@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        {% block links %}
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+        
+        {% endblock %}
+
+        <title> {% block title %} {% endblock %}</title>
+
+    </head>
+
+    {% block load %}
+
+    <body class="main-background"> 
+
+    {% endblock %}
+
+        <div class="top-line">
+
+            <a href="{{ url_for('views.home_page' )}}">
+
+                <div class="top-line-home">
+
+                    <img class="top-line-home-image" src="{{ url_for('static', filename='icons/home.png') }}">
+
+                </div>
+
+            </a>
+
+            <div class="top-line-logo">
+
+                <img class="top-line-logo-image" src="{{ url_for('static', filename='icons/cactus-4.png') }}">
+
+            </div>
+
+            <div class="top-line-title">
+
+                <p class="website-name">CACTUS.TV</p>
+
+            </div>
+
+            {% if session['logged_in']==True %}
+
+            <a href="{{ url_for('auth.logout' )}}">
+
+                <div class="top-line-logout">
+
+                    <img class="top-line-logout-image" src="{{ url_for('static', filename='icons/logout.png') }}">
+
+                </div> 
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        {% block search_bar %}
+
+        <div class="search-bar">
+
+            <div class="button-div">
+
+                <form action="{{ url_for('views.load_search_page') }}">
+                
+                    <button id="search" class="search-button">Search</button>
+
+            </div>
+
+        </div>
+
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+        
+    </body>
+
+</html>
+

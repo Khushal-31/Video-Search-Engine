@@ -1,0 +1,351 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+
+{{ current_video[0]['videoInfo']['snippet']['title'] }}
+
+{% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/video.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="main-container">
+
+    <div class="left-part">
+
+        {% if current_video %}
+        
+        <div class="current-video-panel">
+            
+            <!-- <img class="current-video" src="{{ current_video[0]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}"> -->
+
+            <iframe class="current-video" frameBorder="0" src="https://www.youtube.com/embed/{{current_video[0]['videoInfo']['id']}}?autoplay=1&mute=1"></iframe>
+
+        </div>
+
+        <div class="description">
+
+            <div class="first-line-description">
+
+                <p class="first-line-title"> {{ current_video[0]['videoInfo']['snippet']['title'] }}</p>
+
+            </div>
+
+            <hr class="hr-1">
+
+            <div class="second-line-description">
+
+                <div class="second-line-description-left">
+
+                    <p> {{ current_video[0]['videoInfo']['snippet']['channelTitle'] }} &#183; Upload Date : {{ current_video[0]['videoInfo']['snippet']['publishedAt'] }} </p>
+
+                </div>
+
+                <div class="second-line-description-right">
+
+                </div>
+
+            </div>
+
+            <hr class="hr-1">
+
+            <div class="third-line-description">
+
+                <div class="third-line-description-views">
+
+                    <img class="third-line-image-1" src="{{ url_for('static', filename='icons/views.png') }}">
+
+                    <p class="third-line-text"> &#183; {{ current_video[0]['videoInfo']['statistics']['viewCount'] }} Views</p>
+
+                </div>
+
+                <div class="third-line-description-favorite">
+
+                    <img class="third-line-image-2" src="{{ url_for('static', filename='icons/favorites.png') }}">
+
+                    <p class="third-line-text"> {{ current_video[0]['videoInfo']['statistics']['favoriteCount'] }} </p>
+
+                </div>
+
+                <div class="third-line-description-likes">
+
+                    <img class="third-line-image-3" src="{{ url_for('static', filename='icons/likes.png') }}">
+
+                    <p class="third-line-text"> {{ current_video[0]['videoInfo']['statistics']['likeCount'] }} </p>
+
+                </div>
+
+                <div class="third-line-description-dislikes">
+
+                    <img class="third-line-image-4" src="{{ url_for('static', filename='icons/dislikes.png') }}">
+
+                    <p class="third-line-text"> {{ current_video[0]['videoInfo']['statistics']['dislikeCount'] }} </p>
+
+                </div>
+
+            </div>
+
+            <hr class="hr-1">
+
+            <div class="fourth-line-description">
+
+                <p class="fourth-line-text">{{ current_video[0]['videoInfo']['snippet']['description'] }}</p>
+
+                <p class="fourth-line-tags"> {{ current_video[0]['videoInfo']['snippet']['tags'] }} </p>
+
+            </div>
+
+            <hr class="hr-1">
+
+            <div class="fifth-line-description">
+
+                <div class="fifth-line-description-comments">
+
+                    <img class="fifth-line-image-1" src="{{ url_for('static', filename='icons/comment.png') }}">
+
+                    <p class="fifth-line-text"> &#183; {{ current_video[0]['videoInfo']['statistics']['commentCount'] }} Comments</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    <div class="recommendation-container">
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[0]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[0]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[0]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[1]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[1]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[1]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[2]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[2]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[2]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[3]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[3]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[3]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[4]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[4]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[4]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[5]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[5]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[5]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[6]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[6]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[6]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[7]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[7]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[7]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[8]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[8]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[8]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+        <div class="snippet-container">
+
+            {% if recommended_videos %}
+
+            {% set id = recommended_videos[9]['videoInfo']['id'] %}
+
+            <a href="{{ url_for('views.video_page',id=id)}}">
+
+                <div class="snippet-content">
+
+                <img class="thumbnail" src="{{ recommended_videos[9]['videoInfo']['snippet']['thumbnails']['medium']['url'] }}">
+
+                <p class="title"> {{ recommended_videos[9]['videoInfo']['snippet']['title'] }} </p>
+
+                </div>
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <br><br><br><br>
+
+    </div>
+
+{% endblock %}

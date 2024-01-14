@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+
+    Search Page
+
+{% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+
+    <script src="{{ url_for('static', filename='js/query.js') }}"></script>
+
+{% endblock %}
+
+{% block search_bar %}
+
+     <div class="search-bar">
+
+            <div class="search-div">
+
+                <form action="{{ url_for('views.search_page',query=query) }}" method="POST">
+
+                <input type="text" class="search-bar-box" name="query" placeholder="Type to search...">
+
+            </div>
+
+            <div class="button-div">
+
+                <button class="search-button">Search</button>
+
+            </div>
+
+    </div>
+
+{% endblock %}
+
